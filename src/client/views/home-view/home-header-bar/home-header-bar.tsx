@@ -87,15 +87,8 @@ export class HomeHeaderBar extends React.Component<HomeHeaderBarProps, HomeHeade
     }
 
     return <header className="home-header-bar" style={headerStyle}>
-      <div className="left-bar" onClick={onNavClick}>
-        <div className="menu-icon">
-          <SvgIcon svg={require('../../../icons/menu.svg')}/>
-        </div>
-        <div className="title">{title}</div>
-      </div>
       <div className="right-bar">
         {this.props.children}
-        {userButton}
       </div>
       {this.renderUserMenu()}
     </header>;

@@ -87,6 +87,12 @@ export class SettingsView extends React.Component<SettingsViewProps, SettingsVie
   onSave(settings: AppSettings, okMessage?: string): Q.Promise<any> {
     const { onSettingsChange } = this.props;
 
+    Ajax.query({
+      method: "PUT",
+      url: document.referrer + 'api/v1/dashboards/1',
+      data: {name: 'dashboard', description: 'dashboard', data: JSON.stringify(settings)}
+    });
+
     return Ajax.query({
       method: "POST",
       url: 'settings',

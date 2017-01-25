@@ -133,10 +133,10 @@ export class SwivApplication extends React.Component<SwivApplicationProps, SwivA
       }
     }
 
-    if (viewType === HOME && dataCubes.length === 1 && collections.length === 0) {
+    /*if (viewType === HOME && dataCubes.length === 1 && collections.length === 0) {
       viewType = CUBE;
       selectedItem = dataCubes[0];
-    }
+    }*/
 
     this.setState({
       viewType,
@@ -233,6 +233,8 @@ export class SwivApplication extends React.Component<SwivApplicationProps, SwivA
     const appSettings = this.state.appSettings || this.props.appSettings;
     const { dataCubes } = appSettings;
     var viewType = this.parseHash(hash)[0];
+
+    if (hash.search('/HOME') !== -1) return HOME;
 
     if (viewType === SETTINGS && user && user.allow['settings']) return SETTINGS;
 
@@ -475,8 +477,12 @@ export class SwivApplication extends React.Component<SwivApplicationProps, SwivA
 
   renderView() {
     const { maxFilters, maxSplits, user, stateful } = this.props;
-    const { viewType, viewHash, selectedItem, appSettings, timekeeper, cubeViewSupervisor } = this.state;
+    let { viewType, viewHash, selectedItem, appSettings, timekeeper, cubeViewSupervisor } = this.state;
     const { dataCubes, collections, customization, linkViewConfig } = appSettings;
+
+    if (viewType === NO_DATA) {
+      viewType = HOME;
+    }
 
     switch (viewType) {
       case NO_DATA:

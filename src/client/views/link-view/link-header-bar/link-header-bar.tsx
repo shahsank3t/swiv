@@ -131,10 +131,7 @@ export class LinkHeaderBar extends React.Component<LinkHeaderBarProps, LinkHeade
     }
 
     return <header className="link-header-bar" style={headerStyle}>
-      <div className="left-bar" onClick={onNavClick}>
-        <div className="menu-icon">
-          <SvgIcon svg={require('../../../icons/menu.svg')}/>
-        </div>
+      <div className="left-bar">
         <div className="title">{title}</div>
       </div>
       <div className="right-bar">
@@ -142,10 +139,6 @@ export class LinkHeaderBar extends React.Component<LinkHeaderBarProps, LinkHeade
         <a className="icon-button help" href="https://groups.google.com/forum/#!forum/imply-user-group" target="_blank">
           <SvgIcon className="help-icon" svg={require('../../../icons/help.svg')}/>
         </a>
-        <div className="icon-button settings" onClick={this.onSettingsMenuClick.bind(this)}>
-          <SvgIcon className="settings-icon" svg={require('../../../icons/full-settings.svg')}/>
-        </div>
-        {userButton}
       </div>
       {this.renderUserMenu()}
     </header>;

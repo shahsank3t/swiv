@@ -15,8 +15,8 @@
  */
 
 %header-bar {
-  background: $background-brand;
-  color: $white;
+  /*background: $background-brand;*/
+  color: #5f6571;
   font-size: 16px;
   z-index: 11;
 
@@ -32,7 +32,7 @@
       padding: 11px 5px;
 
       svg path {
-        fill: #fff;
+        fill: #5f6571;
       }
     }
 
@@ -100,7 +100,7 @@
       }
 
       svg path {
-        fill: #fff;
+        fill: #5f6571;
       }
     }
 
@@ -115,19 +115,19 @@
 
       .cancel {
         color: $white;
-        background-color: rgba($white, 0.28);
+        background-color: #808080;
 
         &:hover {
-          background-color: rgba($white, 0.36);
+          background-color: #808080;
         }
       }
 
       .save {
-        color: $brand;
-        background-color: $white;
+        color: $white;
+        background-color: #40af49;
 
         &:hover {
-          background-color: rgba($white, 0.92);
+          background-color: #389640;
         }
       }
     }

@@ -53,6 +53,12 @@ export class CollectionViewDelegate {
     var deferred = Q.defer<string>();
 
     Ajax.query({
+      method: "PUT",
+      url: document.referrer + 'api/v1/dashboards/1',
+      data: {name: 'dashboard', description: 'dashboard', data: JSON.stringify(appSettings)}
+    });
+
+    Ajax.query({
       method: "POST",
       url: 'collections',
       data: {

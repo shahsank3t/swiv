@@ -50,7 +50,7 @@ function parseOrNull(json: any): any {
 }
 
 export interface AjaxOptions {
-  method: 'GET' | 'POST';
+  method: 'GET' | 'POST' | 'PUT';
   url: string;
   data?: any;
 }
@@ -64,10 +64,10 @@ export class Ajax {
   static query(options: AjaxOptions): Q.Promise<any> {
     var data = options.data;
 
-    if (data) {
+    /*if (data) {
       if (Ajax.version) data.version = Ajax.version;
       if (Ajax.settingsVersionGetter) data.settingsVersion = Ajax.settingsVersionGetter();
-    }
+    }*/
 
     return Qajax({
       method: options.method,

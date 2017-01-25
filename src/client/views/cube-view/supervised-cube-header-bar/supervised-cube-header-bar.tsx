@@ -114,9 +114,6 @@ export class SupervisedCubeHeaderBar extends React.Component<SupervisedCubeHeade
         <div className="title">{supervisor.title}</div>
       </div>
       <div className="right-bar">
-        <div className="icon-button settings" onClick={this.onSettingsMenuClick.bind(this)}>
-          <SvgIcon className="settings-icon" svg={require('../../../icons/full-settings.svg')}/>
-        </div>
         <div className="button-group">
           <Button className="cancel" title="Cancel" type="secondary" onClick={supervisor.cancel}/>
           <Button className="save" title={supervisor.saveLabel || 'Save'} type="primary" onClick={this.onSave.bind(this)}/>

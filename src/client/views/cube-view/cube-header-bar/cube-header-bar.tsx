@@ -297,23 +297,13 @@ export class CubeHeaderBar extends React.Component<CubeHeaderBarProps, CubeHeade
     }
 
     return <header className="cube-header-bar" style={headerStyle}>
-      <div className="left-bar" onClick={onNavClick}>
-        <div className="menu-icon">
-          <SvgIcon svg={require('../../../icons/menu.svg')}/>
-        </div>
+      <div className="left-bar">
         <div className="title">{essence.dataCube.title}</div>
       </div>
       <div className="right-bar">
         <div className={classNames("icon-button", "auto-refresh", { "refreshing": animating })} onClick={this.onAutoRefreshMenuClick.bind(this)}>
           <SvgIcon className="auto-refresh-icon" svg={require('../../../icons/full-refresh.svg')}/>
         </div>
-        <div className="icon-button hiluk" onClick={this.onHilukMenuClick.bind(this)}>
-          <SvgIcon className="hiluk-icon" svg={require('../../../icons/full-hiluk.svg')}/>
-        </div>
-        <div className="icon-button settings" onClick={this.onSettingsMenuClick.bind(this)}>
-          <SvgIcon className="settings-icon" svg={require('../../../icons/full-settings.svg')}/>
-        </div>
-        {userButton}
       </div>
       {this.renderHilukMenu()}
       {this.renderAutoRefreshMenu()}

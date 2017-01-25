@@ -460,7 +460,7 @@ export class CubeView extends React.Component<CubeViewProps, CubeViewState> {
         resize={this.globalResizeListener.bind(this)}
       />
       {headerBar}
-      <div className="container" ref='container'>
+      <div className="container" ref='container' style={{top: 42}}>
         <DimensionMeasurePanel
           style={styles.dimensionMeasurePanel}
           clicker={clicker}

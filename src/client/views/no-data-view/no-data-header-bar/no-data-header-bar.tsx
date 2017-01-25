@@ -87,15 +87,11 @@ export class NoDataHeaderBar extends React.Component<NoDataHeaderBarProps, NoDat
     }
 
     return <header className="no-data-header-bar" style={headerStyle}>
-      <div className="left-bar" onClick={onNavClick}>
-        <div className="menu-icon">
-          <SvgIcon svg={require('../../../icons/menu.svg')}/>
-        </div>
+      <div className="left-bar">
         <div className="title">{title}</div>
       </div>
       <div className="right-bar">
         {this.props.children}
-        {userButton}
       </div>
       {this.renderUserMenu()}
     </header>;
